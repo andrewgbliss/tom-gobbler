@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PhysicsArea" load_steps=2 format=3 uid="uid://fcvinc08nj5g"]
+
+[ext_resource type="Script" path="res://addons/bliss/physics/physics_area.gd" id="1_3egps"]
+
+[resource]
+script = ExtResource("1_3egps")
+name = ""
+gravity_percent = 1.0
+movement_percent = 1.0
+acceleration = 40.0
+friction = 25.0
+stop_velocity_on_enter = false
+change_to_state = ""
+unfreeze_area = false
+freeze_area = false
