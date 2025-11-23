@@ -1,9 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://e07jsdfvvi5q"]
-
-[ext_resource type="Shader" path="res://materials/fog_shader_material.gdshader" id="1_5qtwk"]
-
-[resource]
-shader = ExtResource("1_5qtwk")
-shader_parameter/effect_speed = 0.808
-shader_parameter/screen_size = Vector2(1280, 720)
-shader_parameter/center_position = Vector2(0, 0)

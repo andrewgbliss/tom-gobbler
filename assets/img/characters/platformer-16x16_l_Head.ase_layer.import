@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://7g143cf3r0ej"
+path="res://.godot/imported/platformer-16x16_l_Head.ase_layer-9e97294729a922245558814e26fdc6ca.res"
+
+[deps]
+
+files=["res://.godot/imported/platformer-16x16_l_Head.ase_layer-9e97294729a922245558814e26fdc6ca.Head.texture.res"]
+
+source_file="res://assets/img/characters/platformer-16x16_l_Head.ase_layer"
+dest_files=["res://.godot/imported/platformer-16x16_l_Head.ase_layer-9e97294729a922245558814e26fdc6ca.res", "res://.godot/imported/platformer-16x16_l_Head.ase_layer-9e97294729a922245558814e26fdc6ca.Head.texture.res"]
+
+[params]
+

@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://wkkt64xrk4v3"
+path="res://.godot/imported/platformer-16x16_l_Front Arm.ase_layer-6f1eeb77c63f62b988406b2d7a957e78.res"
+
+[deps]
+
+files=["res://.godot/imported/platformer-16x16_l_Front Arm.ase_layer-6f1eeb77c63f62b988406b2d7a957e78.Front Arm.texture.res"]
+
+source_file="res://assets/img/characters/platformer-16x16_l_Front Arm.ase_layer"
+dest_files=["res://.godot/imported/platformer-16x16_l_Front Arm.ase_layer-6f1eeb77c63f62b988406b2d7a957e78.res", "res://.godot/imported/platformer-16x16_l_Front Arm.ase_layer-6f1eeb77c63f62b988406b2d7a957e78.Front Arm.texture.res"]
+
+[params]
+

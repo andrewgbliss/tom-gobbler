@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://cvb7e7nhbw0nq"
+path="res://.godot/imported/platformer-16x16_l_Back Leg.ase_layer-436ca4e49c58f27a37f45c4eef9d1482.res"
+
+[deps]
+
+files=["res://.godot/imported/platformer-16x16_l_Back Leg.ase_layer-436ca4e49c58f27a37f45c4eef9d1482.Back Leg.texture.res"]
+
+source_file="res://assets/img/characters/platformer-16x16_l_Back Leg.ase_layer"
+dest_files=["res://.godot/imported/platformer-16x16_l_Back Leg.ase_layer-436ca4e49c58f27a37f45c4eef9d1482.res", "res://.godot/imported/platformer-16x16_l_Back Leg.ase_layer-436ca4e49c58f27a37f45c4eef9d1482.Back Leg.texture.res"]
+
+[params]
+

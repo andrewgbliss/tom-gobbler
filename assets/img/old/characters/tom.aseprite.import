@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cdd6amqm8vjbu"
+path="res://.godot/imported/tom.aseprite-d5157c46bfb44862f0808c850262c28c.res"
+
+[deps]
+
+source_file="res://assets/img/old/characters/tom.aseprite"
+dest_files=["res://.godot/imported/tom.aseprite-d5157c46bfb44862f0808c850262c28c.res"]
+
+[params]
+

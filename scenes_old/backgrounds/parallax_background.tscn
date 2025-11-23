@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://6aceyldswtpx"]
+
+[ext_resource type="Texture2D" uid="uid://b14yx8gocdy4h" path="res://assets/img/old/environment/Sky.png" id="1_bqa50"]
+[ext_resource type="Texture2D" uid="uid://bm318uqlmysir" path="res://assets/img/old/environment/dirt.png" id="2_hthus"]
+[ext_resource type="Texture2D" uid="uid://nr6c7yw7sqla" path="res://assets/img/old/environment/clouds1.png" id="2_ngsf3"]
+[ext_resource type="Texture2D" uid="uid://d38c6y1pvi2sl" path="res://assets/img/old/environment/Mountains.png" id="3_0nva1"]
+[ext_resource type="Texture2D" uid="uid://bmlbxbp6yg6t2" path="res://assets/img/old/environment/clouds2.png" id="3_14dsu"]
+[ext_resource type="Texture2D" uid="uid://dqagvajdqjyes" path="res://assets/img/old/environment/Hills.png" id="4_he255"]
+[ext_resource type="Texture2D" uid="uid://nt1sfuaavvmu" path="res://assets/img/old/environment/Trees.png" id="5_tyy6p"]
+
+[node name="ParallaxBackground" type="Node2D"]
+
+[node name="Sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 180)
+repeat_times = 4
+
+[node name="Sky" type="Sprite2D" parent="Sky"]
+position = Vector2(0, -149)
+texture = ExtResource("1_bqa50")
+centered = false
+
+[node name="Ground" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 0)
+repeat_times = 4
+
+[node name="Dirt" type="Sprite2D" parent="Ground"]
+texture = ExtResource("2_hthus")
+centered = false
+
+[node name="Dirt2" type="Sprite2D" parent="Ground"]
+position = Vector2(0, 178)
+texture = ExtResource("2_hthus")
+centered = false
+
+[node name="Mountains" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 0)
+repeat_times = 4
+
+[node name="Mountains" type="Sprite2D" parent="Mountains"]
+position = Vector2(0, -32)
+texture = ExtResource("3_0nva1")
+centered = false
+
+[node name="Clouds" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, 19)
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 4
+
+[node name="Clouds1" type="Sprite2D" parent="Clouds"]
+modulate = Color(1, 1, 1, 0.811765)
+position = Vector2(-32, -85)
+texture = ExtResource("2_ngsf3")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds"]
+modulate = Color(1, 1, 1, 0.811765)
+position = Vector2(-199, -22)
+texture = ExtResource("3_14dsu")
+
+[node name="Hills" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 0)
+repeat_times = 4
+
+[node name="Hills" type="Sprite2D" parent="Hills"]
+position = Vector2(0, -6)
+texture = ExtResource("4_he255")
+centered = false
+
+[node name="Trees" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 0)
+repeat_times = 4
+
+[node name="Trees" type="Sprite2D" parent="Trees"]
+position = Vector2(0, -7)
+texture = ExtResource("5_tyy6p")
+centered = false

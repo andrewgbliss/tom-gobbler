@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://hkdj3kcpdhab"
+path="res://.godot/imported/platformer-16x16_l_Chest.ase_layer-65f1ae53078567afe1546d7e7e31dff5.res"
+
+[deps]
+
+files=["res://.godot/imported/platformer-16x16_l_Chest.ase_layer-65f1ae53078567afe1546d7e7e31dff5.Chest.texture.res"]
+
+source_file="res://assets/img/characters/platformer-16x16_l_Chest.ase_layer"
+dest_files=["res://.godot/imported/platformer-16x16_l_Chest.ase_layer-65f1ae53078567afe1546d7e7e31dff5.res", "res://.godot/imported/platformer-16x16_l_Chest.ase_layer-65f1ae53078567afe1546d7e7e31dff5.Chest.texture.res"]
+
+[params]
+

@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://di0xhyjbhjtgd"
+path="res://.godot/imported/platformer-16x16_l_Waist.ase_layer-bdb993145a780bf6bd7058b5de8b60c1.res"
+
+[deps]
+
+files=["res://.godot/imported/platformer-16x16_l_Waist.ase_layer-bdb993145a780bf6bd7058b5de8b60c1.Waist.texture.res"]
+
+source_file="res://assets/img/characters/platformer-16x16_l_Waist.ase_layer"
+dest_files=["res://.godot/imported/platformer-16x16_l_Waist.ase_layer-bdb993145a780bf6bd7058b5de8b60c1.res", "res://.godot/imported/platformer-16x16_l_Waist.ase_layer-bdb993145a780bf6bd7058b5de8b60c1.Waist.texture.res"]
+
+[params]
+
