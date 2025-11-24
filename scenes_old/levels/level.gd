@@ -1,7 +1,7 @@
 class_name Level
 extends Node
 
-@export var player : PlatformerCharacterController
+#@export var player : PlatformerCharacterController
 
 var spawn_points
 var cages
@@ -9,7 +9,7 @@ var cage_count = 0
 
 func _ready():  
 	spawn_points = get_tree().get_nodes_in_group("spawn_point")
-	player.spawn(spawn_points[0].position)
+	#player.spawn(spawn_points[0].position)
 	
 	var npcs = get_tree().get_nodes_in_group("npc")
 	for npc in npcs:
