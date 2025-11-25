@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpbn45kginuir"]
 
 [ext_resource type="Texture2D" uid="uid://cbjjgt0me0kl" path="res://assets/img/old/environment/cage-Sheet.png" id="1_mlua7"]
-[ext_resource type="Script" uid="uid://31evpy81gfmy" path="res://scenes_old/environment/cage.gd" id="1_tno6h"]
+[ext_resource type="Script" uid="uid://31evpy81gfmy" path="res://scenes_game/environment/cage.gd" id="1_tno6h"]
 [ext_resource type="PackedScene" uid="uid://nl3mcrvxmsx1" path="res://scenes/characters/npc/turkey.tscn" id="3_lufvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqn1"]

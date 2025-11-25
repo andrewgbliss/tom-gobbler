@@ -1,11 +1,8 @@
 class_name World extends Node2D
 
 @export var world_name: String
-@export var next_level_path: String
 
 var world_doors: Array[WorldDoor] = []
-var cages
-var cage_count = 0
 
 func _ready() -> void:
 	_find_world_doors(self)
@@ -19,13 +16,8 @@ func _after_ready():
 	
 	GameUi.hud.show_hud()
 	
-	#NotifcationsToast.show_notification("Game Ready", "Ready to start the game!")
-	#NotifcationsToast.show_notification("Aint no one got you on this", "Holy shit!!!")
-	
-	cages = get_tree().get_nodes_in_group("cage")
-	cage_count = cages.size()
-	for cage in cages:
-		cage.cage_break.connect(_on_cage_break)
+	# NotifcationsToast.show_notification("Game Ready", "Ready to start the game!")
+	# NotifcationsToast.show_notification("Objective", "Free all the turkeys in cages!")
 	
 func _restore_spawn():
 	UserDataStore.restore()
@@ -45,11 +37,6 @@ func find_world_door():
 		if door.door_id == GameManager.game_config.to_world_door_id:
 			return door
 	return null
-
-func _on_cage_break():
-	cage_count -= 1
-	if cage_count == 0:
-		SceneManager.goto_scene(next_level_path)
 
 func save():
 	return {

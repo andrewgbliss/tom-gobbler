@@ -322,7 +322,7 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
 sprite_frames = ExtResource("6_dwp1v")
-animation = &"Wall Jump"
+animation = &"Idle"
 offset = Vector2(1.125, 4.15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
