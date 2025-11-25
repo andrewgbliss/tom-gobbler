@@ -26,7 +26,7 @@ tile_set = ExtResource("3_hr2vv")
 script = ExtResource("4_rviw6")
 
 [node name="WeatherBiome" parent="." instance=ExtResource("5_mchpp")]
-position = Vector2(-527, -328)
+position = Vector2(-406, -331)
 
 [node name="Cage" parent="." instance=ExtResource("6_dkbip")]
 position = Vector2(17, 66)

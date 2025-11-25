@@ -4,3 +4,4 @@
 
 [node name="WorldTimeService" type="Node"]
 script = ExtResource("1_3mndk")
+INGAME_SPEED = 2.0
