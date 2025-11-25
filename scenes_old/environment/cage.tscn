@@ -78,7 +78,7 @@ libraries = {
 }
 
 [node name="Turkey" parent="." instance=ExtResource("3_lufvr")]
-position = Vector2(0, 6)
+position = Vector2(0, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mlua7")
