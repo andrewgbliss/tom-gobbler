@@ -12,7 +12,7 @@
 
 [node name="Sky" type="Parallax2D" parent="."]
 repeat_size = Vector2(320, 180)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Sky" type="Sprite2D" parent="Sky"]
 position = Vector2(0, -149)
@@ -20,57 +20,65 @@ texture = ExtResource("1_bqa50")
 centered = false
 
 [node name="Ground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(320, 0)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Dirt" type="Sprite2D" parent="Ground"]
+position = Vector2(1, 106)
 texture = ExtResource("2_hthus")
 centered = false
 
 [node name="Dirt2" type="Sprite2D" parent="Ground"]
-position = Vector2(0, 178)
+position = Vector2(1, 284)
 texture = ExtResource("2_hthus")
 centered = false
 
 [node name="Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(0, 103)
 repeat_size = Vector2(320, 0)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Mountains" type="Sprite2D" parent="Mountains"]
-position = Vector2(0, -32)
+position = Vector2(0, -21)
 texture = ExtResource("3_0nva1")
 centered = false
 
 [node name="Clouds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(0, 19)
 repeat_size = Vector2(320, 0)
 autoscroll = Vector2(-5, 0)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Clouds1" type="Sprite2D" parent="Clouds"]
 modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(-32, -85)
+position = Vector2(-32, -5)
 texture = ExtResource("2_ngsf3")
 
 [node name="Clouds2" type="Sprite2D" parent="Clouds"]
 modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(-199, -22)
+position = Vector2(-199, 58)
 texture = ExtResource("3_14dsu")
 
 [node name="Hills" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(-1, 29)
 repeat_size = Vector2(320, 0)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Hills" type="Sprite2D" parent="Hills"]
-position = Vector2(0, -6)
+position = Vector2(0, 4)
 texture = ExtResource("4_he255")
 centered = false
 
 [node name="Trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(320, 0)
-repeat_times = 4
+repeat_times = 12
 
 [node name="Trees" type="Sprite2D" parent="Trees"]
-position = Vector2(0, -7)
+position = Vector2(0, 37)
 texture = ExtResource("5_tyy6p")
 centered = false

@@ -7,7 +7,7 @@
 
 [node name="Title" type="Node2D" node_paths=PackedStringArray("start_btn")]
 script = ExtResource("1_fbo6s")
-scene_to_start = "res://scenes/world/world_platformer.tscn"
+scene_to_start = "res://scenes_old/levels/level_1.tscn"
 start_btn = NodePath("CanvasLayer/ButtonStart")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_r5lig")]

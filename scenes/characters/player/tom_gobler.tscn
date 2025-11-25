@@ -265,7 +265,9 @@ ledge_grab_raycast = NodePath("LedgeGrabRayCast2D")
 script = ExtResource("4_vluxo")
 state_machine = NodePath("../PlatformerStateMachine")
 aim_sprite = NodePath("../Crosshairs")
+show_aim_sprite = false
 touch_sprite = NodePath("../TouchCircle")
+show_touch_sprite = false
 metadata/_custom_type_script = "uid://d2lsy2pdynjo3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -412,10 +414,10 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 15)
-limit_left = 0
-limit_top = 0
-limit_right = 2000
-limit_bottom = 1000
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 script = ExtResource("15_k7jyn")
@@ -602,12 +604,14 @@ metadata/_custom_type_script = "uid://d0fmsyj4x3pii"
 script = ExtResource("47_bvefi")
 hand_offset = Vector2(0, 2)
 animation_name = "Ledge Grab"
+enabled = false
 metadata/_custom_type_script = "uid://doqs1otgurbf7"
 
 [node name="LedgeClimbState" type="Node" parent="PlatformerStateMachine"]
 script = ExtResource("48_lout0")
 animation_name = "Ledge Climb"
 wait_for_animation_finished = true
+enabled = false
 
 [node name="SmashDownState" type="Node" parent="PlatformerStateMachine"]
 script = ExtResource("49_ns27v")
@@ -630,6 +634,7 @@ wait_for_animation_finished = true
 metadata/_custom_type_script = "uid://ckix7re6h2e6k"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.0
+position = Vector2(0, 10)
+energy = 1.5
 shadow_enabled = true
 texture = ExtResource("30_er127")

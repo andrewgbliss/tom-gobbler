@@ -49,15 +49,10 @@ position = Vector2(540, -56)
 [node name="RigidBlockEntity8" parent="WorldAreas" instance=ExtResource("4_ffbjb")]
 position = Vector2(540, -40)
 
-[node name="PlayerSpawner" type="Node2D" parent="." node_paths=PackedStringArray("entity_container")]
+[node name="PlayerSpawner" type="Node2D" parent="."]
 position = Vector2(256, 320)
 script = ExtResource("7_2fypn")
-player_key = "tom"
-entity_container = NodePath("../EntityContainer")
 metadata/_custom_type_script = "uid://ddlo01mfc118i"
-
-[node name="EntityContainer" type="Node2D" parent="."]
-top_level = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6m72w")

@@ -9,6 +9,7 @@ class_name CharacterController extends CharacterBody2D
 @export var character: Character
 @export var controls: CharacterControls
 @export var state_machine: StateMachine
+@export var hide_on_ready: bool = true
 
 @export_group("Navigation")
 @export var navigation_agent: NavigationAgent2D
@@ -44,7 +45,8 @@ signal died(character: CharacterController)
 signal facing_direction_changed
 
 func _ready() -> void:
-	hide()
+	if hide_on_ready:
+		hide()
 	paralyzed = true
 	GameManager.game_config.gravity_dir_changed.connect(_on_gravity_dir_changed)
 	if navigation_agent:

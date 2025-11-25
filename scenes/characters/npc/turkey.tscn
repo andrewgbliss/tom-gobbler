@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3 uid="uid://nl3mcrvxmsx1"]
+
+[ext_resource type="Script" uid="uid://cyhaw1qyjtrhn" path="res://blisscode/character/character_controller.gd" id="1_84fky"]
+[ext_resource type="Script" uid="uid://bkcl7yhvmiokh" path="res://blisscode/character/character_sheet.gd" id="2_1swaj"]
+[ext_resource type="Script" uid="uid://dm5r6oukwhccm" path="res://blisscode/character/character.gd" id="3_vv7g2"]
+[ext_resource type="SpriteFrames" uid="uid://c4ejdl1emim30" path="res://assets/img/old/characters/turkey.res" id="5_84fky"]
+[ext_resource type="Script" uid="uid://0vge3j1r1s0n" path="res://blisscode/character/animation/animated_sprite_facing_direction.gd" id="6_1swaj"]
+[ext_resource type="Script" uid="uid://brschogihfiwm" path="res://blisscode/character/controls/ai_controls.gd" id="6_4fbt4"]
+[ext_resource type="Script" uid="uid://bnbbi7tcoi6sg" path="res://blisscode/behavior_tree/bt_blackboard.gd" id="7_r51cr"]
+[ext_resource type="Script" uid="uid://b3mlg2cpf7tdl" path="res://blisscode/behavior_tree/bt_player.gd" id="8_qe8r5"]
+[ext_resource type="Script" uid="uid://dnm2cmvm2uh0v" path="res://blisscode/behavior_tree/composite/bt_selector_node.gd" id="9_t738e"]
+[ext_resource type="Script" uid="uid://xwbo18yggp15" path="res://blisscode/behavior_tree/composite/bt_sequence_node.gd" id="10_k1r4v"]
+[ext_resource type="Texture2D" uid="uid://dl5ed1afrnnhn" path="res://assets/img/masks/LightMask.png" id="12_rv41c"]
+[ext_resource type="Script" uid="uid://b8x28spcn1q3a" path="res://blisscode/behavior_tree/action/bt_follow_path_process.gd" id="14_gju5e"]
+
+[sub_resource type="Resource" id="Resource_m4jla"]
+script = ExtResource("2_1swaj")
+health = 100
+max_health = 100
+metadata/_custom_type_script = "uid://bkcl7yhvmiokh"
+
+[sub_resource type="Resource" id="Resource_dskel"]
+script = ExtResource("3_vv7g2")
+character_sheet = SubResource("Resource_m4jla")
+metadata/_custom_type_script = "uid://dm5r6oukwhccm"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84hc2"]
+
+[node name="Turkey" type="CharacterBody2D" node_paths=PackedStringArray("controls", "behavior_trees") groups=["npc", "persist"]]
+collision_layer = 64
+collision_mask = 103
+motion_mode = 1
+script = ExtResource("1_84fky")
+character = SubResource("Resource_dskel")
+controls = NodePath("AIControls")
+hide_on_ready = false
+garbage = true
+garbage_time = 0.1
+behavior_trees = [NodePath("BTPlayer")]
+metadata/_custom_type_script = "uid://cyhaw1qyjtrhn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_84hc2")
+
+[node name="AIControls" type="Node" parent="." node_paths=PackedStringArray("blackboard")]
+script = ExtResource("6_4fbt4")
+blackboard = NodePath("../BTBlackboard")
+metadata/_custom_type_script = "uid://brschogihfiwm"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+position = Vector2(0, -10)
+sprite_frames = ExtResource("5_84fky")
+animation = &"Flap"
+frame = 2
+frame_progress = 0.93147576
+offset = Vector2(1.125, 4.15)
+
+[node name="AnimatedSpriteFacingDirection" type="Node2D" parent="." node_paths=PackedStringArray("agent", "animated_sprite")]
+script = ExtResource("6_1swaj")
+agent = NodePath("..")
+animated_sprite = NodePath("../AnimatedSprite2D")
+flip_offset = Vector2(1.125, 8.15)
+metadata/_custom_type_script = "uid://0vge3j1r1s0n"
+
+[node name="BTBlackboard" type="Node" parent="."]
+script = ExtResource("7_r51cr")
+metadata/_custom_type_script = "uid://bnbbi7tcoi6sg"
+
+[node name="BTPlayer" type="Node" parent="." node_paths=PackedStringArray("root_node", "blackboard", "agent")]
+script = ExtResource("8_qe8r5")
+root_node = NodePath("BTSelectorNode")
+blackboard = NodePath("../BTBlackboard")
+agent = NodePath("..")
+metadata/_custom_type_script = "uid://b3mlg2cpf7tdl"
+
+[node name="BTSelectorNode" type="Node" parent="BTPlayer"]
+script = ExtResource("9_t738e")
+metadata/_custom_type_script = "uid://dnm2cmvm2uh0v"
+
+[node name="Wander" type="Node" parent="BTPlayer/BTSelectorNode"]
+script = ExtResource("10_k1r4v")
+metadata/_custom_type_script = "uid://xwbo18yggp15"
+
+[node name="BTFollowPathProcess" type="Node" parent="BTPlayer/BTSelectorNode/Wander"]
+script = ExtResource("14_gju5e")
+acquire_target = true
+metadata/_custom_type_script = "uid://b8x28spcn1q3a"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 1)
+energy = 1.5
+shadow_enabled = true
+texture = ExtResource("12_rv41c")
