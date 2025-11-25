@@ -173,6 +173,7 @@ offset_left = -125.0
 offset_top = -98.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1
@@ -185,6 +186,7 @@ offset_right = -21.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_type_variation = &"NormalPanel"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
@@ -219,6 +221,7 @@ texture_normal = ExtResource("2_gppfg")
 layout_mode = 2
 
 [node name="DescriptionLabel" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_spacing = -10
@@ -226,9 +229,11 @@ text = "This is a long description to test the UI"
 autowrap_mode = 3
 
 [node name="HSeparator2" type="HSeparator" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="DateLabel" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "10:59 PM 12/12/2025"
 

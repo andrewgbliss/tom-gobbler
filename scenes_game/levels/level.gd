@@ -23,11 +23,12 @@ func _after_ready():
 
 func _on_cage_break(pos: Vector2):
 	cage_broken_count += 1
+	GameUi.hud.update_enemies_killed(cage_broken_count, cage_count)
 	if cage_broken_count == cage_count:
+		SpawnManager.float_text("All turkeys freed!", pos - Vector2(16, 24))
 		NotifcationsToast.show_notification("Objective Complete", "You have freed all the turkeys in cages!")
 		NotifcationsToast.show_notification("Next Level", "Let's go to the next level!")
 		await get_tree().create_timer(10.0).timeout
 		SceneManager.goto_scene(next_level_path)
 	else:
 		SpawnManager.float_text("%d cages left" % [cage_count - cage_broken_count], pos - Vector2(16, 24))
-		GameUi.hud.update_enemies_killed(cage_broken_count, cage_count)

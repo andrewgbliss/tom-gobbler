@@ -16,8 +16,8 @@ func _after_ready():
 	
 	GameUi.hud.show_hud()
 	
-	# NotifcationsToast.show_notification("Game Ready", "Ready to start the game!")
-	# NotifcationsToast.show_notification("Objective", "Free all the turkeys in cages!")
+	#NotifcationsToast.show_notification("Game Ready", "Ready to start the game!")
+	#NotifcationsToast.show_notification("Aint no one got you on this", "Holy shit!!!")
 	
 func _restore_spawn():
 	UserDataStore.restore()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dabgp8qon8cl6"]
+[gd_scene load_steps=72 format=3 uid="uid://dabgp8qon8cl6"]
 
 [ext_resource type="Shader" uid="uid://i1wplu28b7c4" path="res://blisscode/shaders/character.gdshader" id="1_7kyxw"]
 [ext_resource type="Script" uid="uid://cyhaw1qyjtrhn" path="res://blisscode/character/character_controller.gd" id="2_1op74"]
@@ -52,6 +52,7 @@
 [ext_resource type="Script" uid="uid://blnadlxb5ld8" path="res://blisscode/state_machine/states/smash_down_state.gd" id="49_ns27v"]
 [ext_resource type="Resource" uid="uid://b67684th5w7q0" path="res://blisscode/character/physics_groups/smash_down_physics.tres" id="50_nvc1a"]
 [ext_resource type="Script" uid="uid://ckix7re6h2e6k" path="res://blisscode/state_machine/states/roll_state.gd" id="51_c4gaj"]
+[ext_resource type="Script" uid="uid://mkjqnaq1oabe" path="res://blisscode/light/point_light_2d_advanced.gd" id="53_m5srl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8kth0"]
 shader = ExtResource("1_7kyxw")
@@ -414,10 +415,6 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 15)
-limit_left = -10000
-limit_top = -10000
-limit_right = 10000
-limit_bottom = 10000
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 script = ExtResource("15_k7jyn")
@@ -437,6 +434,28 @@ collision_mask = 2048
 hit_from_inside = true
 script = ExtResource("18_rdljg")
 agent = NodePath("..")
+metadata/_custom_type_script = "uid://bx4nlc04ew5og"
+
+[node name="TopRayCast2D" type="RayCast2D" parent="." node_paths=PackedStringArray("agent")]
+position = Vector2(-4, 20)
+target_position = Vector2(0, -25)
+collision_mask = 4
+hit_from_inside = true
+script = ExtResource("18_rdljg")
+agent = NodePath("..")
+facing_left_position = Vector2(-4, 20)
+facing_right_position = Vector2(-4, 20)
+metadata/_custom_type_script = "uid://bx4nlc04ew5og"
+
+[node name="TopRayCast2D2" type="RayCast2D" parent="." node_paths=PackedStringArray("agent")]
+position = Vector2(6, 20)
+target_position = Vector2(0, -25)
+collision_mask = 4
+hit_from_inside = true
+script = ExtResource("18_rdljg")
+agent = NodePath("..")
+facing_left_position = Vector2(6, 20)
+facing_right_position = Vector2(6, 20)
 metadata/_custom_type_script = "uid://bx4nlc04ew5og"
 
 [node name="LedgeGrabRayCast2D" type="RayCast2D" parent="." node_paths=PackedStringArray("agent")]
@@ -546,17 +565,21 @@ hitbox = NodePath("../../UpthrustHitbox")
 animation_name = "Up Thrust"
 metadata/_custom_type_script = "uid://lbc7hxobl82o"
 
-[node name="CrouchIdleState" type="Node" parent="PlatformerStateMachine" node_paths=PackedStringArray("collision_shape", "crouch_collision_shape")]
+[node name="CrouchIdleState" type="Node" parent="PlatformerStateMachine" node_paths=PackedStringArray("collision_shape", "crouch_collision_shape", "top_raycast_left", "top_raycast_right")]
 script = ExtResource("34_s1kwg")
 collision_shape = NodePath("../../CollisionShape2D")
 crouch_collision_shape = NodePath("../../CrouchCollisionShape2D")
+top_raycast_left = NodePath("../../TopRayCast2D")
+top_raycast_right = NodePath("../../TopRayCast2D2")
 animation_name = "Crouch Idle"
 metadata/_custom_type_script = "uid://d23xdwefkddhf"
 
-[node name="CrouchWalkState" type="Node" parent="PlatformerStateMachine" node_paths=PackedStringArray("collision_shape", "crouch_collision_shape")]
+[node name="CrouchWalkState" type="Node" parent="PlatformerStateMachine" node_paths=PackedStringArray("collision_shape", "crouch_collision_shape", "top_raycast_left", "top_raycast_right")]
 script = ExtResource("35_f0b0k")
 collision_shape = NodePath("../../CollisionShape2D")
 crouch_collision_shape = NodePath("../../CrouchCollisionShape2D")
+top_raycast_left = NodePath("../../TopRayCast2D")
+top_raycast_right = NodePath("../../TopRayCast2D2")
 animation_name = "Crouch Walk"
 metadata/_custom_type_script = "uid://qfh8rf6645xi"
 
@@ -634,7 +657,9 @@ wait_for_animation_finished = true
 metadata/_custom_type_script = "uid://ckix7re6h2e6k"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, 10)
-energy = 1.5
+position = Vector2(0, 8)
+energy = 2.0
 shadow_enabled = true
 texture = ExtResource("30_er127")
+texture_scale = 4.0
+script = ExtResource("53_m5srl")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://nl3mcrvxmsx1"]
+[gd_scene load_steps=17 format=3 uid="uid://nl3mcrvxmsx1"]
 
 [ext_resource type="Script" uid="uid://cyhaw1qyjtrhn" path="res://blisscode/character/character_controller.gd" id="1_84fky"]
 [ext_resource type="Script" uid="uid://bkcl7yhvmiokh" path="res://blisscode/character/character_sheet.gd" id="2_1swaj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dnm2cmvm2uh0v" path="res://blisscode/behavior_tree/composite/bt_selector_node.gd" id="9_t738e"]
 [ext_resource type="Script" uid="uid://xwbo18yggp15" path="res://blisscode/behavior_tree/composite/bt_sequence_node.gd" id="10_k1r4v"]
 [ext_resource type="Texture2D" uid="uid://dl5ed1afrnnhn" path="res://assets/img/masks/LightMask.png" id="12_rv41c"]
+[ext_resource type="Script" uid="uid://mkjqnaq1oabe" path="res://blisscode/light/point_light_2d_advanced.gd" id="13_qdx3y"]
 [ext_resource type="Script" uid="uid://b8x28spcn1q3a" path="res://blisscode/behavior_tree/action/bt_follow_path_process.gd" id="14_gju5e"]
 
 [sub_resource type="Resource" id="Resource_m4jla"]
@@ -92,3 +93,4 @@ position = Vector2(0, 1)
 energy = 1.5
 shadow_enabled = true
 texture = ExtResource("12_rv41c")
+script = ExtResource("13_qdx3y")

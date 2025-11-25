@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpbn45kginuir"]
+[gd_scene load_steps=11 format=3 uid="uid://cpbn45kginuir"]
 
 [ext_resource type="Texture2D" uid="uid://cbjjgt0me0kl" path="res://assets/img/old/environment/cage-Sheet.png" id="1_mlua7"]
 [ext_resource type="Script" uid="uid://31evpy81gfmy" path="res://scenes_game/environment/cage.gd" id="1_tno6h"]
-[ext_resource type="PackedScene" uid="uid://nl3mcrvxmsx1" path="res://scenes/characters/npc/turkey.tscn" id="3_lufvr"]
+[ext_resource type="PackedScene" uid="uid://nl3mcrvxmsx1" path="res://scenes_game/characters/turkey.tscn" id="3_lufvr"]
+[ext_resource type="AudioStream" uid="uid://brjp1ast7o8mm" path="res://assets/audio/effects/Hit.wav" id="4_pqh3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqn1"]
 size = Vector2(23, 23)
@@ -63,10 +64,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6r3f"]
 size = Vector2(23, 23)
 
-[node name="Cage" type="StaticBody2D" groups=["cage"]]
+[node name="Cage" type="StaticBody2D" node_paths=PackedStringArray("audio_break") groups=["cage"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_tno6h")
+audio_break = NodePath("AudioStreamPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4.5)
@@ -91,6 +93,11 @@ collision_mask = 512
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_p6r3f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pqh3i")
+volume_db = -15.906
+bus = &"Effects"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -11,7 +11,7 @@
 [sub_resource type="Environment" id="Environment_vc0di"]
 background_mode = 3
 glow_enabled = true
-glow_bloom = 0.02
+glow_bloom = 0.06
 glow_blend_mode = 1
 
 [node name="WeatherBiome" type="Node2D"]
