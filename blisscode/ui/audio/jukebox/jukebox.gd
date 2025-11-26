@@ -189,6 +189,8 @@ func get_playlist_track_names() -> Array:
 	return []
 
 func _on_previous_button_pressed() -> void:
+	if preloaded_tracks.size() == 0:
+		return
 	if current_track_index == 0:
 		current_track_index = preloaded_tracks.size() - 1
 	else:
@@ -203,6 +205,8 @@ func _on_next_button_pressed() -> void:
 	pause_button.grab_focus()
 
 func _next_song(index: int = -1) -> void:
+	if preloaded_tracks.size() == 0:
+		return
 	current_track_index = (index + 1) % preloaded_tracks.size()
 	current_song_container = songlist_container.get_child(current_track_index)
 
