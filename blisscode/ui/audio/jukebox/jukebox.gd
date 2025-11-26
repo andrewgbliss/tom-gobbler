@@ -9,6 +9,7 @@ class_name Jukebox extends Node2D
 @export var show_minimize_button: bool = true
 @export var show_title_label: bool = true
 @export var loop_on_start: bool = false
+@export var tracks_to_load: Array[AudioStream] = []
 
 @export_group("UI")
 @export var panel: Panel
@@ -92,6 +93,9 @@ func _after_ready():
 		if data:
 			_on_album_selected(data.path)
 
+	if tracks_to_load.size() > 0:
+		_on_album_selected("")
+
 	if play_on_start:
 		_on_play_button_pressed()
 
@@ -144,7 +148,10 @@ func _on_album_selected(path: String) -> void:
 		return
 	for c in songlist_container.get_children():
 		c.queue_free()
-	preload_mp3_folder_tracks(path, "mp3")
+	if tracks_to_load.size() > 0:
+		_preload_tracks_to_load()
+	else:
+		preload_mp3_folder_tracks(path, "mp3")
 	_build_playlist()
 	pause_button.hide()
 	stop_button.hide()
@@ -156,6 +163,16 @@ func _on_player_controls_focus_entered() -> void:
 		pause_button.grab_focus()
 	else:
 		play_button.grab_focus()
+
+func _preload_tracks_to_load() -> void:
+	for track in tracks_to_load:
+		var resource_path = track.resource_path
+		var file_name = resource_path.split("/")[-1]
+		var track_object = {
+			"name": file_name,
+			"track": track
+		}
+		preloaded_tracks.append(track_object)
 
 func preload_mp3_folder_tracks(path: String, ext: String):
 	preloaded_tracks = []
@@ -220,6 +237,8 @@ func _stop_other_songs() -> void:
 			child.stop()
 
 func _play_current_song() -> void:
+	if not current_song_container:
+		return
 	time_label.text = _get_song_length()
 	if not current_song_container.is_playing:
 		current_song_container.play()
@@ -231,6 +250,8 @@ func _play_current_song() -> void:
 	scroll_container.ensure_control_visible(current_song_container)
 
 func _get_song_length() -> String:
+	if not current_song_container:
+		return ""
 	var seconds = current_song_container.audio_stream_player.stream.get_length()
 	var minutes = seconds / 60
 	var hours = minutes / 60

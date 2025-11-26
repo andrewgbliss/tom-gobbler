@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b31r4po3jgb3u"]
+[gd_scene load_steps=22 format=3 uid="uid://b31r4po3jgb3u"]
 
 [ext_resource type="Script" uid="uid://stobcojgfp8s" path="res://blisscode/ui/audio/jukebox/jukebox.gd" id="1_lj7v1"]
+[ext_resource type="AudioStream" uid="uid://vn88gg5rtqny" path="res://assets/audio/background-music/background-music.mp3" id="2_37c2h"]
 [ext_resource type="PackedScene" uid="uid://cyd1wnj2k44f" path="res://blisscode/ui/audio/jukebox/song_container.tscn" id="2_cjec2"]
 [ext_resource type="Texture2D" uid="uid://bw1opjjdb64cd" path="res://assets/img/ui/audio/AudioControls_Prev.png" id="2_utn00"]
 [ext_resource type="Script" uid="uid://cq4duwfquvhh" path="res://blisscode/ui/audio/jukebox/jukebox_title.gd" id="3_382q3"]
@@ -28,8 +29,8 @@ spacing_bottom = -12
 process_mode = 3
 script = ExtResource("1_lj7v1")
 play_on_start = true
-playlist_to_start = "tomgobbler"
 loop_on_start = true
+tracks_to_load = [ExtResource("2_37c2h")]
 panel = NodePath("CanvasLayer/Panel")
 title_label = NodePath("CanvasLayer/Panel/VBoxContainer/MarginContainer2/HBoxContainer/Label")
 previous_button = NodePath("CanvasLayer/Panel/VBoxContainer/MarginContainer/TabContainer/Player/MarginContainer/VBoxContainer/PlayerControls/HBoxContainer/HBoxContainer/PrevButton")
