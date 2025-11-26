@@ -293,7 +293,7 @@ enemies_label = NodePath("CanvasLayer/Control/EnemyLabel")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 100
+layer = 400
 
 [node name="PauseTextureButton" type="TextureButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)

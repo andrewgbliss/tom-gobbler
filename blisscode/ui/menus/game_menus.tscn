@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dgq6syw2qe32p"]
+[gd_scene load_steps=30 format=3 uid="uid://dgq6syw2qe32p"]
 
 [ext_resource type="Script" uid="uid://bxu41q8tb6kv5" path="res://blisscode/ui/menus/game_menus.gd" id="1_od5r7"]
 [ext_resource type="Script" uid="uid://cg8iv8veotlm8" path="res://blisscode/ui/menus/menu/menu_stack.gd" id="3_ljqv8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dupq66corv17" path="res://blisscode/ui/menus/menu/buttons/menu_game_start_button.gd" id="6_od5r7"]
 [ext_resource type="Script" uid="uid://dn07iyn4dq4i4" path="res://blisscode/ui/menus/menu/buttons/menu_quit_button.gd" id="7_iwh2y"]
 [ext_resource type="PackedScene" uid="uid://c40xhlbq0xxj2" path="res://blisscode/ui/volume_slider/volume_slider.tscn" id="8_fn1d8"]
+[ext_resource type="Script" uid="uid://cvmt3mptfcet4" path="res://blisscode/ui/audio/jukebox/jukebox_open_button.gd" id="8_iwh2y"]
 [ext_resource type="Script" uid="uid://dld4x2ypkgy5l" path="res://blisscode/ui/menus/menu/buttons/menu_save_game_button.gd" id="9_062ld"]
 [ext_resource type="PackedScene" uid="uid://crehrk04266wa" path="res://blisscode/ui/menus/menu/controls_menu/controls_menu.tscn" id="9_bg78d"]
 [ext_resource type="AudioStream" uid="uid://da5oygxus6g8a" path="res://assets/audio/effects/click.mp3" id="9_kxayy"]
@@ -882,6 +883,11 @@ script = ExtResource("5_vwoi7")
 menu_stack = NodePath("../../../../../../..")
 to_menu = NodePath("../../../../../../../AudioMenu")
 metadata/_custom_type_script = "uid://kfj666n2xifd"
+
+[node name="JukeboxButton" type="Button" parent="MenuStack/PauseMenu/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Jukebox"
+script = ExtResource("8_iwh2y")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MenuStack/PauseMenu/Control/Panel/MarginContainer/VBoxContainer"]
 visible = false

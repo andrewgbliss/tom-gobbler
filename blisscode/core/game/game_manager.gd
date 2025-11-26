@@ -3,7 +3,6 @@ extends Node2D
 
 @export var user_config: UserConfig
 @export var game_config: GameConfig
-@export var audio_player: AudioStreamPlayer
 
 @export_tool_button("Open User Folder", "Callable") var open_user_folder_action = open_user_folder
 @export_tool_button("Remove User Data", "Callable") var remove_user_data_action = remove_user_data
@@ -44,8 +43,6 @@ func set_audio_volumes():
 	AudioUtils.set_volume(1, user_config.music_volume)
 	AudioUtils.set_volume(2, user_config.ambience_volume)
 	AudioUtils.set_volume(3, user_config.effects_volume)
-	if audio_player:
-		audio_player.play()
 
 func _on_audio_volume_changed(bus_idx: int, volume: float):
 	user_config.set_volume(bus_idx, volume)
